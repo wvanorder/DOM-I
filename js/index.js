@@ -112,7 +112,9 @@ footerStuff.textContent = siteContent.footer.copyright;
 
 const bodyPage = document.getElementsByClassName('container');
 
-
+const colorChange = function() {
+  headyBoi.style.color = 'purple';
+}
 
 
 domButton.onclick = colorChange;
