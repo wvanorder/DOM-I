@@ -39,4 +39,85 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+
+
+const myName = document.createElement('a');
+myName.textContent = 'Will';
+const navBar = document.querySelector('nav');
+navBar.prepend(myName);
+
+const signIn = document.createElement('a');
+signIn.textContent = 'Sign-in';
+navBar.append(signIn);
+
+
+const navStuff = navBar.children;
+for(let i = 0; i< navStuff.length; i ++) {
+  if (i > 0 && i < navStuff.length -1) {
+    navStuff[i].textContent = siteContent.nav[`nav-item-${i}`];
+  }
+  navStuff[i].style.color = 'green';
+};
+
+const headyBoi = document.querySelector('h1');
+headyBoi.textContent += siteContent.cta.h1;
+
+const domButton = document.querySelector('button');
+domButton.textContent = siteContent.cta.button;
+
+
+const topBlurbTitles = document.querySelectorAll('.top-content .text-content h4');
+topBlurbTitles[0].textContent = siteContent["main-content"]["features-h4"];
+topBlurbTitles[1].textContent = siteContent["main-content"]["about-h4"];
+
+const topBlurbText = document.querySelectorAll('.top-content .text-content p');
+topBlurbText[0].textContent = siteContent["main-content"]["features-content"];
+topBlurbText[1].textContent = siteContent["main-content"]["about-content"];
+
+const bottomBlurbTitles = document.querySelectorAll('.bottom-content .text-content h4');
+const bottomBlurbText = document.querySelectorAll('.bottom-content .text-content p');
+
+bottomBlurbTitles[0].textContent = siteContent["main-content"]["services-h4"];
+bottomBlurbTitles[1].textContent = siteContent["main-content"]["product-h4"];
+bottomBlurbTitles[2].textContent = siteContent["main-content"]["vision-h4"];
+
+bottomBlurbText[0].textContent = siteContent["main-content"]["services-content"];
+bottomBlurbText[1].textContent = siteContent["main-content"]["product-content"];
+bottomBlurbText[2].textContent = siteContent["main-content"]["vision-content"];
+
+
+
+const midImage = document.getElementById('middle-img');
+midImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+const ctaimg = document.querySelector('#cta-img');
+ctaimg.setAttribute('src', siteContent['cta']['img-src']);
+
+
+const contactHead = document.querySelector('.contact h4');
+contactHead.textContent = siteContent.contact["contact-h4"];
+
+const contactParas = document.querySelectorAll('.contact p');
+contactParas[0].textContent = siteContent.contact.address;
+contactParas[1].textContent = siteContent.contact.phone;
+contactParas[2].textContent = siteContent.contact.email;
+
+
+
+const footerStuff = document.querySelector('footer');
+footerStuff.textContent = siteContent.footer.copyright;
+
+
+const bodyPage = document.getElementsByClassName('container');
+
+const colorChange = function() {
+  headyBoi.style.color = 'purple';
+}
+
+
+domButton.onclick = colorChange;
+
+
+
